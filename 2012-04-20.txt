@@ -1,5 +1,7 @@
 2012-04-20
 
+09:45
+
 schema di rappresentazione
 
 corrispondenza tra spazio dei modelli matematici M e spazio di rappresentazioni simboliche R
@@ -138,3 +140,79 @@ una 2-catena è una qualunque combinazione lineare di 2 celle
 
 spazi e operatori definiscono il COMPLESSO DI CATENE/COCATENE (chain complex)
 cioè tutti i possibili campi supportati da un complesso a celle K
+
+
+---------------------------------------------------------------------------------------
+
+15.45
+
+ESTRUSIONE
+
+le righe corrispondono alle celle
+
+sulle righe 
+sulle colonne metti l'indice dei vertici
+
+C2
+1 1 0 1 0 0
+0 1 0 1 1 0
+0 1 0 1 1 0
+0 0 1 0 1 1
+
+ho tre elem non zero in ogni riga poiché ogni faccia è composta da 3 vertici
+
+posso scrivere solo gli indice delle colonne con elem. non zero
+(NB corrispondono all'indice dei vertici!!!)
+0 1 3
+1 3 4
+1 2 4
+2 4 5
+
+
+per fare un'estrusione effettuo una traslazione nell'indice
+es. vertici
+aggiungo una colonna di 1
+1 0 1 3
+1 1 3 4
+1 1 2 4
+1 2 4 5
+
+rappresento un punto in forma
+x
+y
+z
+1
+
+solo che metto l'uno prima di x y z
+praticamente aggiungo una riga di 1 in fondo:
+x1  x2  .  xn
+y1  y2  .  yn
+z1  z2  .  zn
+1   1   .  1
+
+solo che ora sto considerando per colonna quindi aggiungo una colonna di 1
+
+così preparo i dati per la traslazione e devo contemporaneamente generarne varie copie
+
+ragiono sulle righe -> faccio i prodotti a dx, per delle matrici di traslazione
+
+ricorda com'era la traslazione...
+es. traslo un triangolo di vertici v0,v1,v2 -> ottengo un triangolo di vertici v3,v4,v5
+ho aumentato l'indice di 3
+
+ho i vertici (0 1 2 3 4 5)
+
+devo avere una nuova matrice che contiene i vertici seguiti dalla copia traslata
+x non fare casino sui vertici parto dall'indice dell'ultimo vertice (nel nostro caso 5)
+sommo il successivo a tutti gli altri vertici (sommo 6 a tutti gli indici precedenti)
+0 1 3
+1 3 4
+1 2 4
+2 4 5
+
+sommo 6 e aggiungo il numero ad ogni riga
+
+0 1 3 6 7 9
+1 3 4 7 9 10
+1 2 4 7 8 10
+2 4 5 8 10 11
